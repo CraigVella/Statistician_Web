@@ -1,0 +1,188 @@
+html, body {
+	width: 100%;
+	margin: 0;
+	background-color: #a6dcff ;
+	background-image: url('./images/topfill.png');
+	background-repeat: repeat-x;
+	font-family: Helvetica;
+}
+
+hr {
+	height: 1px;
+	color: black;
+	background-color: black;
+	border: none;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+ol,ul {
+	border-collapse: collapse;
+	border: dashed black 1px;
+	padding-top: 12px;
+	background-color: #f4ffde;
+}
+
+li {
+	font-weight: bold;
+	font-size: 12px;
+	width: 98%;
+	padding-bottom: 12px;
+}
+
+table {
+	border-collapse: collapse;
+	border: solid black 1px;
+	width: 625px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+th {
+	font-size: 15px;
+	background-color: red;
+}
+
+td {
+	border: solid black 1px;
+	padding: 5px;
+	font-size: 12px;
+}
+
+#topLeadBar {
+	width: 100%;
+	height: 200px;
+	margin: 0 auto;
+}
+
+#titleMain {
+	width: 600px;
+	height: 200px;
+	background-image: url('./images/header.png');
+	background-repeat: no-repeat;
+	z-index: 3;
+}
+
+#creeper {
+	position: relative;
+	float: right;
+	top: -200px;
+	width: 200px;
+	height: 200px;
+	background-image: url('./images/creeper.png');
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+#content {
+	margin-left: 20px;
+	margin-right: 20px;
+	clear: both;
+	top: -200px;
+	position: relative;
+}
+
+#listTitle {
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: solid black 1px;
+	margin-bottom: 10px;
+}
+
+#subTitle {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid black 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#subCategory {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: solid black 1px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+}
+
+#online {
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 5px;
+}
+
+#infoLine {
+    margin-bottom: 5px;
+}
+
+#infoLabel {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+#info {
+    margin-left: 2px;
+    font-size: 15px;
+    font-style: italic;
+    margin-right: 8px;
+}
+
+#onlinePlayer {
+       
+}
+
+#smallLink {
+    font-size: 12px;
+}
+
+#copyright {
+	border-top: black solid 1px;
+	width: 100%;
+	font-size: 10px;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#pageSelector {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#pageSelector_CurrentPage {
+	color: blue;
+	text-decoration: underline;
+}
+
+#killRow{
+	background-color: #ff7373;
+}
+
+#deathRow {
+	background-color: #95d881;
+}
+
+a:link {
+    border-collapse: collapse;
+    text-decoration: none;
+    color: #005000;
+}
+
+a:visited {
+    border-collapse: collapse;
+    text-decoration: none;
+    color: #005000;
+}
+
+a:hover {
+    border-collapse: collapse;
+    text-decoration: none;
+    color: green;
+}
