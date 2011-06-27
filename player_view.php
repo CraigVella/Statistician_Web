@@ -136,7 +136,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
     <span id="infoLabel">Drowning Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Drowning")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Drowning"))) : 0); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Suffocating Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Suffocating")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Suffocating"))) : 0); ?></span>
+    <span id="infoLabel">Suffocating Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Suffocation")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Suffocation"))) : 0); ?></span>
 </div>
 <div id="infoLine">
     <span id="infoLabel">Lightening Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Lightening")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Lightening"))) : 0); ?></span>
