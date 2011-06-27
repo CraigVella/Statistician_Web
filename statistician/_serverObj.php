@@ -41,6 +41,24 @@
 				return QueryUtils::get2DArrayFromQuery("SELECT * FROM players ORDER BY player_name ASC LIMIT {$limitStart},{$limitNumber}");
 		}
 		
+		public function getUptimeInSeconds() {
+			$sut = $this->getStartupTime();
+			$sdt = $this->getLastShutdownTime();
+			if ($sdt > $sut) return 0;
+			$now = time();
+			return $now - $sut;
+		}
+		
+		public function getStartupTime() {
+			$row = mysql_fetch_assoc(mysql_query("SELECT `startup_time` FROM `server`"));
+			return $row['startup_time'];
+		}
+		
+		public function getLastShutdownTime() {
+			$row = mysql_fetch_assoc(mysql_query("SELECT `shutdown_time` FROM `server`"));
+			return $row['shutdown_time'];
+		}
+		
 		public function getNumberCurrentOnline() {
 			return mysql_num_rows(mysql_query("SELECT uuid FROM players WHERE online = 'Y'"));
 		}

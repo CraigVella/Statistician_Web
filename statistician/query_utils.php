@@ -79,7 +79,9 @@
 		public static function formatSecs($ns) {
 			$time = "";
 
-			$days = intval((intval($ns) / 86400));
+			$years = intval((intval($ns) / (86400 * 365)));
+
+			$days = intval((intval($ns) / 86400) % 365);
             
             $hours = intval((intval($ns) / 3600) % 24);
 			
@@ -87,21 +89,37 @@
 			
 			$seconds = intval($ns % 60);
 			
+			if ($years > 0) {
+				$time .= $years . ' year(s) ';
+			}
+			
             if ($days > 0) {
-                $time .= $days . 'day(s) ';
+                $time .= $days . ' day(s) ';
             }
             
 			if ($hours > 0) {
-				$time .= $hours . 'hr(s) ';
+				$time .= $hours . ' hr(s) ';
 			}
 			if ($minutes > 0) {
-				$time .= $minutes . 'min(s) ';
+				$time .= $minutes . ' min(s) ';
 			}
 			if ($seconds > 0) {
-				$time .= $seconds . 'sec(s)';
+				$time .= $seconds . ' sec(s)';
 			}
 			
 			return $time;	
+		}
+		
+		public static function formatDistance($dis) {
+			if ($dis < 1000) {
+				return $dis . ' meters';
+			}
+			
+			if ($dis < 1000000) {
+				return round(($dis / 1000),2). ' kilometers';
+			}
+			
+			return round(($dis / 1000000),2). ' Megameters';
 		}
 	}
 

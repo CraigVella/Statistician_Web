@@ -19,19 +19,19 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 </div>
 <div id="subCategory">Distances</div>
 <div id="infoLine">
-    <span id="infoLabel">Total Travel Distance:</span><span id="info"><?php echo($_player->getDistanceTraveledTotal()); ?> meters</span>
+    <span id="infoLabel">Total Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($_player->getDistanceTraveledTotal())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Foot Travel Distance:</span><span id="info"><?php echo($_player->getDistanceTraveledByFoot()); ?> meters</span>
+    <span id="infoLabel">Total Foot Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($_player->getDistanceTraveledByFoot())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Minecart Travel Distance:</span><span id="info"><?php echo($_player->getDistanceTraveledByMinecart()); ?> meters</span>
+    <span id="infoLabel">Total Minecart Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($_player->getDistanceTraveledByMinecart())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Boat Travel Distance:</span><span id="info"><?php echo($_player->getDistanceTraveledByBoat()); ?> meters</span>
+    <span id="infoLabel">Total Boat Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($_player->getDistanceTraveledByBoat())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Pig Travel Distance:</span><span id="info"><?php echo($_player->getDistanceTraveledByPig()); ?> meters</span>
+    <span id="infoLabel">Total Pig Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($_player->getDistanceTraveledByPig())); ?></span>
 </div>
 <div id="subCategory">Blocks &nbsp; &nbsp; <a href="?view=playerBlock&uuid=<?php echo($_player->getUUID()); ?>" id="smallLink">(View Detailed Block List)</a></div>
 <div id="infoLine">

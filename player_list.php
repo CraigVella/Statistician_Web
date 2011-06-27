@@ -65,8 +65,12 @@
 				}
 			}
 		}
+		if ($pageNumber != $numPages) {
 		?>
 		<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>">Next >></a>
+		<?php
+		}
+		?>
 		</span>
 		<?php
 		} 

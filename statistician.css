@@ -122,8 +122,9 @@ td {
 }
 
 #info {
+	font-weight: bold;
     margin-left: 2px;
-    font-size: 15px;
+    font-size: 12px;
     font-style: italic;
     margin-right: 8px;
 }

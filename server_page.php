@@ -20,21 +20,30 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
 <div id="infoLine">
     <span id="infoLabel">Time Played Total:</span><span id="info"><?php echo(QueryUtils::formatSecs($serverObj->getNumberOfSecondsLoggedOnTotal())); ?></span>
 </div>
+<div id="infoLine">
+    <span id="infoLabel">Server Current UpTime:</span><span id="info"><?php echo(QueryUtils::formatSecs($serverObj->getUptimeInSeconds())); ?></span>
+</div>
+<div id="infoLine">
+    <span id="infoLabel">Server Last Startup:</span><span id="info"><?php echo(QueryUtils::formatDate($serverObj->getStartupTime())); ?></span>
+</div>
+<div id="infoLine">
+    <span id="infoLabel">Server Last Shutdown:</span><span id="info"><?php echo(QueryUtils::formatDate($serverObj->getLastShutdownTime())); ?></span>
+</div>
 <div id="subCategory">Distances</div>
 <div id="infoLine">
-    <span id="infoLabel">Total Travel Distance:</span><span id="info"><?php echo($serverObj->getDistanceTraveledTotal()); ?> meters</span>
+    <span id="infoLabel">Total Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($serverObj->getDistanceTraveledTotal())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Foot Travel Distance:</span><span id="info"><?php echo($serverObj->getDistanceTraveledByFootTotal()); ?> meters</span>
+    <span id="infoLabel">Total Foot Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($serverObj->getDistanceTraveledByFootTotal())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Minecart Travel Distance:</span><span id="info"><?php echo($serverObj->getDistanceTraveledByMinecartTotal()); ?> meters</span>
+    <span id="infoLabel">Total Minecart Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($serverObj->getDistanceTraveledByMinecartTotal())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Boat Travel Distance:</span><span id="info"><?php echo($serverObj->getDistanceTraveledByBoatTotal()); ?> meters</span>
+    <span id="infoLabel">Total Boat Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($serverObj->getDistanceTraveledByBoatTotal())); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Total Pig Travel Distance:</span><span id="info"><?php echo($serverObj->getDistanceTraveledByPigTotal()); ?> meters</span>
+    <span id="infoLabel">Total Pig Travel Distance:</span><span id="info"><?php echo(QueryUtils::formatDistance($serverObj->getDistanceTraveledByPigTotal())); ?></span>
 </div>
 <div id="subCategory">Blocks &nbsp; &nbsp; <a href="?view=globalBlocks" id="smallLink">(View Detailed Global Block List)</a></div>
 <div id="infoLine">
@@ -130,7 +139,7 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
     <span id="infoLabel">Drowning Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Drowning")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Drowning"))) : 0); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">Suffocating Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Suffocating")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Suffocating"))) : 0); ?></span>
+    <span id="infoLabel">Suffocating Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Suffocation")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Suffocation"))) : 0); ?></span>
 </div>
 <div id="infoLine">
     <span id="infoLabel">Lightening Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Lightening")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Lightening"))) : 0); ?></span>
