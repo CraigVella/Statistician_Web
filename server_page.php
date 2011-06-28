@@ -153,3 +153,6 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
 <div id="infoLine">
     <span id="infoLabel">Fire Tick Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Fire Tick")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Fire Tick"))) : 0); ?></span>
 </div>
+<div id="infoLine">
+    <span id="infoLabel">Explosion Deaths:</span><span id="info"><?php echo($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Entity Explosion")) ? count($serverObj->getKillTableType(QueryUtils::getKillTypeIdByName("Entity Explosion"))) : 0); ?></span>
+</div>

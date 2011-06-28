@@ -150,3 +150,6 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 <div id="infoLine">
     <span id="infoLabel">Fire Tick Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Fire Tick")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Fire Tick"))) : 0); ?></span>
 </div>
+<div id="infoLine">
+    <span id="infoLabel">Explosion Deaths:</span><span id="info"><?php echo($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Entity Explosion")) ? count($_player->getPlayerDeathTableType(QueryUtils::getKillTypeIdByName("Entity Explosion"))) : 0); ?></span>
+</div>

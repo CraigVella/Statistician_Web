@@ -297,32 +297,36 @@
 		public function getPlayerKillDeathTablePVE($limit = false, $limitStart = 0, $limitNumber = 0) {
 			$playerCreatureId = QueryUtils::getCreatureIdByName("Player");
 			$noneCreatureId = QueryUtils::getCreatureIdByName("None");
+			$blockCreatureId = QueryUtils::getCreatureIdByName("Block");
 			if (!$limit)
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE ((killed != '{$playerCreatureId}' AND killed != '{$noneCreatureId}') XOR (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}'))  AND (killed_by_uuid = '{$this->_playerUUID}' OR killed_uuid = '{$this->_playerUUID}' ) ORDER BY id DESC");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE ((killed != '{$playerCreatureId}' AND killed != '{$noneCreatureId}') XOR (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}' AND killed_by != '{$blockCreatureId}'))  AND (killed_by_uuid = '{$this->_playerUUID}' OR killed_uuid = '{$this->_playerUUID}' ) ORDER BY id DESC");
 			else
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE ((killed != '{$playerCreatureId}' AND killed != '{$noneCreatureId}') XOR (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}'))  AND (killed_by_uuid = '{$this->_playerUUID}' OR killed_uuid = '{$this->_playerUUID}' ) ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE ((killed != '{$playerCreatureId}' AND killed != '{$noneCreatureId}') XOR (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}' AND killed_by != '{$blockCreatureId}'))  AND (killed_by_uuid = '{$this->_playerUUID}' OR killed_uuid = '{$this->_playerUUID}' ) ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
 		}
 		
 		public function getPlayerDeathTablePVE($limit = false, $limitStart = 0, $limitNumber = 0) {
 			$playerCreatureId = QueryUtils::getCreatureIdByName("Player");
 			$noneCreatureId = QueryUtils::getCreatureIdByName("None");
+			$blockCreatureId = QueryUtils::getCreatureIdByName("Block");
 			if (!$limit)
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}' AND killed_by != '{$blockCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC");
 			else
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed_by != '{$playerCreatureId}' AND killed_by != '{$noneCreatureId}' AND killed_by != '{$blockCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
 		}
 		
 		public function getPlayerDeathTableOther($limit = false, $limitStart = 0, $limitNumber = 0) {
 			$noneCreatureId = QueryUtils::getCreatureIdByName("None");
+			$blockCreatureId = QueryUtils::getCreatureIdByName("Block");
 			if (!$limit)
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE killed = '{$noneCreatureId}' XOR killed_by = '{$noneCreatureId}' AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed = '{$noneCreatureId}' OR killed = '{$blockCreatureId}') XOR (killed_by = '{$noneCreatureId}' OR killed_by = '{$blockCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC");
 			else 
-				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE killed = '{$noneCreatureId}' XOR killed_by = '{$noneCreatureId}' AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
+				return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE (killed = '{$noneCreatureId}' OR killed = '{$blockCreatureId}') XOR (killed_by = '{$noneCreatureId}' OR killed_by = '{$blockCreatureId}') AND killed_uuid = '{$this->_playerUUID}' ORDER BY id DESC LIMIT {$limitStart},{$limitNumber}");
 		}
 		
 		public function getPlayerMostDangerousPVECreature() {
         	$ignoreID = QueryUtils::getCreatureIdByName("Player");
         	$noneID = QueryUtils::getCreatureIdByName("None");
+        	$blockID = QueryUtils::getCreatureIdByName("Block");
         	
         	$highest = 0;
         	$idOfHighest = 0;
@@ -331,6 +335,7 @@
         		
         		if ($creatureRow['id'] == $ignoreID) continue;
         		if ($creatureRow['id'] == $noneID) continue;
+        		if ($creatureRow['id'] == $blockID) continue;
         		
         		$res = $this->getPlayerDeathTableCreature($creatureRow['id']);
         		
