@@ -9,4 +9,10 @@
 	
 	define ('SERVER_NAME', 'My Minecraft World Stats');
 	define ('DATE_FORMAT', 'M jS Y\, \a\t g:i:s a');
+    
+    define ('USE_MEGAMETERS', true);
+    
+    // Set your localization (language)
+    define ('LOCALE', 'en');
+ 
 ?>

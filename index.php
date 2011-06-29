@@ -28,8 +28,8 @@ $serverObj = $sObj->getServer();
         <div id="listTitle"><a href="./?view=main"><?php echo (SERVER_NAME); ?></a></div>
 		<?php
 			if (!isset($_GET['view'])) {
-               			$_GET['view'] = 'main';
-            		}
+                $_GET['view'] = 'main';
+ 		    }
 
 			switch ($_GET['view']) {
 				case 'player':
@@ -64,5 +64,5 @@ $serverObj = $sObj->getServer();
 		?>
 	</div>
 	<br />
-	<div id="copyright">Statistician by ChaseHQ :: Running Database Version <?php echo($sObj->getDatabaseVersion()); ?><br />Portal Version 1.2.3</div>
+	<div id="copyright">Statistician by ChaseHQ :: <?php echo(STRING_MISC_RUNNING_DATABASE_VERSION); ?> <?php echo($sObj->getDatabaseVersion()); ?><br /><?php echo(STRING_MISC_PORTAL_VERSION); ?> 1.2.3</div>
 </body>

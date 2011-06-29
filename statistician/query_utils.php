@@ -90,21 +90,21 @@
 			$seconds = intval($ns % 60);
 			
 			if ($years > 0) {
-				$time .= $years . ' year(s) ';
+				$time .= $years . ' ' . STRING_TIME_YEARS_ABV . ' ';
 			}
 			
             if ($days > 0) {
-                $time .= $days . ' day(s) ';
+                $time .= $days . ' ' . STRING_TIME_DAYS_ABV . ' ';
             }
             
 			if ($hours > 0) {
-				$time .= $hours . ' hr(s) ';
+				$time .= $hours . ' ' . STRING_TIME_HOURS_ABV . ' ';
 			}
 			if ($minutes > 0) {
-				$time .= $minutes . ' min(s) ';
+				$time .= $minutes . ' ' . STRING_TIME_MINUTES_ABV . ' ';
 			}
 			if ($seconds > 0) {
-				$time .= $seconds . ' sec(s)';
+				$time .= $seconds . ' ' . STRING_TIME_SECONDS_ABV . ' ';
 			}
 			
 			return $time;	
@@ -112,14 +112,18 @@
 		
 		public static function formatDistance($dis) {
 			if ($dis < 1000) {
-				return $dis . ' meters';
+				return $dis . ' ' . STRING_DISTANCE_METERS;
 			}
 			
-			if ($dis < 1000000) {
-				return round(($dis / 1000),2). ' kilometers';
-			}
+            if (USE_MEGAMETERS) {
+                if ($dis < 1000000) {
+		          return round(($dis / 1000),2). ' ' . STRING_DISTANCE_KILOMETERS;
+                  }
+            } else {
+                return round(($dis / 1000),2). ' ' . STRING_DISTANCE_KILOMETERS;
+            }
 			
-			return round(($dis / 1000000),2). ' Megameters';
+			return round(($dis / 1000000),2). ' ' . STRING_DISTANCE_MEGAMETERS;
 		}
 	}
 

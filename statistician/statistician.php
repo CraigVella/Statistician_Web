@@ -3,6 +3,7 @@
 	/* unless you know what you're doing, then, by all means, be my guest, touch away. ~ ChaseHQ */
 
 	require_once('config.php');
+    require_once ('locale/' . LOCALE . '.php');
 	require_once('_serverObj.php');
 	require_once('_playerObj.php');
 	require_once('query_utils.php');
