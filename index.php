@@ -27,6 +27,10 @@ $serverObj = $sObj->getServer();
 	<div id="content">
         <div id="listTitle"><a href="./?view=main"><?php echo (SERVER_NAME); ?></a></div>
 		<?php
+			if (!isset($_GET['view'])) {
+               			$_GET['view'] = 'main';
+            		}
+
 			switch ($_GET['view']) {
 				case 'player':
 				include('player_view.php');
