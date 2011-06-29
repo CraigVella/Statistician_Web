@@ -201,8 +201,12 @@
 		public function getMostDangerousWeapon() {
             $highest = 0;
             $idOfHighest = -1;
+            $idOfNone = QueryUtils::getResourceIdByName("Hand");
             
             foreach (QueryUtils::getResourceTable() as $resource) {
+            	
+            	if ($resource['resource_id'] == $idOfNone) continue;
+            	
             	$res = $this->getPlayerKillTableUsing($resource['resource_id']);
             	
             	if ($res)

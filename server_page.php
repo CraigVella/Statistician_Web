@@ -15,6 +15,9 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
     <span id="infoLabel">Registered Players:</span><span id="info"><?php echo(count($serverObj->getAllPlayers())); ?></span>
 </div>
 <div id="infoLine">
+    <span id="infoLabel">Maximum Players Ever Online At Once:</span><span id="info"><?php echo($serverObj->getMaxPlayersEverOnline()); ?> - on - <?php echo(QueryUtils::formatDate($serverObj->getMaxPlayersEverOnlineTimeWhenOccured())); ?></span>
+</div>
+<div id="infoLine">
     <span id="infoLabel">Lifetime Number of Logins:</span><span id="info"><?php echo($serverObj->getNumberOfLoginsTotal()); ?></span>
 </div>
 <div id="infoLine">
@@ -77,12 +80,12 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
 </div>
 <div id="subCategory">Kills &nbsp; &nbsp; <a href="?view=globalKills" id="smallLink">(View Detailed Global Kill List)</a></div>
 <div id="infoLine">
-    <span id="infoLabel">Total Deaths:</span><span id="info"><?php echo(count($serverObj->getKillTable())); ?></span>
+    <span id="infoLabel">Total Deaths:</span><span id="info"><?php echo($serverObj->getKillTable() ? count($serverObj->getKillTable()) : 0); ?></span>
 </div>
 <br />
 <div id="infoLine">
     <span id="infoLabel">Most Dangerous Weapon:</span><span id="info"><?php echo(QueryUtils::getResourceNameById($serverObj->getMostDangerousWeapon())); ?> 
-    - (<?php echo (count($serverObj->getKillTableUsing($serverObj->getMostDangerousWeapon()))); ?> kills)</span>
+    - (<?php echo ($serverObj->getKillTableUsing($serverObj->getMostDangerousWeapon()) ? count($serverObj->getKillTableUsing($serverObj->getMostDangerousWeapon())) : 0); ?> kills)</span>
 </div>
 <br />
 <div id="infoLine">

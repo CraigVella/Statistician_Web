@@ -60,5 +60,5 @@ $serverObj = $sObj->getServer();
 		?>
 	</div>
 	<br />
-	<div id="copyright">Statistician by ChaseHQ :: Running Database Version <?php echo($sObj->getDatabaseVersion()); ?><br />Portal Version 1.2.2</div>
+	<div id="copyright">Statistician by ChaseHQ :: Running Database Version <?php echo($sObj->getDatabaseVersion()); ?><br />Portal Version 1.2.3</div>
 </body>

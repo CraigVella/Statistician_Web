@@ -68,6 +68,16 @@
 			return $row['total'];
 		}
 		
+		public function getMaxPlayersEverOnline() {
+			$row = mysql_fetch_assoc(mysql_query("SELECT `max_players_ever_online` FROM `server`"));
+			return $row['max_players_ever_online'];
+		}
+		
+		public function getMaxPlayersEverOnlineTimeWhenOccured() {
+			$row = mysql_fetch_assoc(mysql_query("SELECT `max_players_ever_online_time` FROM `server`"));
+			return $row['max_players_ever_online_time'];
+		}
+		
 		public function getNumberOfSecondsLoggedOnTotal() {
 			$row = mysql_fetch_assoc(mysql_query("SELECT SUM(num_secs_loggedon) AS total FROM players"));
 			return $row['total'];
@@ -286,8 +296,11 @@
         public function getMostDangerousWeapon() {
             $highest = 0;
             $idOfHighest = -1;
+            $idOfNone = QueryUtils::getResourceIdByName("None");
             
             foreach (QueryUtils::getResourceTable() as $resource) {
+            	if ($resource['resource_id'] == $idOfNone) continue;
+            	
             	$res = $this->getKillTableUsing($resource['resource_id']);
             	
             	if ($res)
