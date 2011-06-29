@@ -201,7 +201,7 @@
 		public function getMostDangerousWeapon() {
             $highest = 0;
             $idOfHighest = -1;
-            $idOfNone = QueryUtils::getResourceIdByName("Hand");
+            $idOfNone = QueryUtils::getResourceIdByName("None");
             
             foreach (QueryUtils::getResourceTable() as $resource) {
             	
