@@ -1,13 +1,13 @@
 <?php
 $_player = $serverObj->getPlayer($_GET['uuid']);
 ?>
-<div id="subTitle"><?php echo($_player->getName()); ?> Kills/Deaths</div>
+<div id="subTitle"><?php echo($_player->getName()); ?> <?php echo(STRING_ALL_KILLS); ?>/<?php echo(STRING_ALL_DEATHS); ?></div>
 <a name="pvpKills">
-	<div id="subCategory">PVP Kills/Deaths</div>
+	<div id="subCategory"><?php echo(STRING_ALL_PVP_KILLS); ?>/<?php echo(STRING_ALL_DEATHS); ?></div>
 </a>
 	<table>
 		<tr>
-		 <th></th></th><th>Killer</th><th>Weapon</th><th>Victim</th><th>Kill Time</th>
+		 <th></th></th><th><?php echo(STRING_ALL_KILLER); ?></th><th><?php echo(STRING_ALL_WEAPON); ?></th><th><?php echo(STRING_ALL_VICTIM); ?></th><th><?php echo(STRING_ALL_KILLTIME); ?></th>
 		</tr>
 		<?php
 		
@@ -60,7 +60,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		// Allow User to Go To Next Page
 		?>
 		<span id="pageSelector">
-		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< Prev</a> <?php } ?>
+		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< <?php echo(STRING_ALL_PREVIOUS); ?></a> <?php } ?>
 		<?php if ($pageNumber > 1) {
 			for ($x = 3; $x >= 1; --$x) {
 				$jumpToPage = $pageNumber - $x;
@@ -86,7 +86,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		}
 		if ($pageNumber != $numPages) {
 		?>
-		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>">Next >></a>
+		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>"><?php echo(STRING_ALL_NEXT); ?> >></a>
 		<?php
 		}
 		?>
@@ -96,12 +96,12 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		?>
 
 <a name="pveKills">
-	<div id="subCategory">PVE Kills/Deaths</div>
+	<div id="subCategory"><?php echo(STRING_ALL_PVE_KILLS); ?>/<?php echo(STRING_ALL_DEATHS); ?></div>
 </a>
 
 	<table>
 		<tr>
-		 <th></th></th><th>Killer</th><th>Weapon</th><th>Victim</th><th>Kill Time</th>
+		 <th></th></th><th><?php echo(STRING_ALL_KILLER); ?></th><th><?php echo(STRING_ALL_WEAPON); ?></th><th><?php echo(STRING_ALL_VICTIM); ?></th><th><?php echo(STRING_ALL_KILLTIME); ?></th>
 		</tr>
 		<?php
 		
@@ -188,7 +188,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		// Allow User to Go To Next Page
 		?>
 		<span id="pageSelector">
-		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< Prev</a> <?php } ?>
+		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< <?php echo(STRING_ALL_PREVIOUS); ?></a> <?php } ?>
 		<?php if ($pageNumber > 1) {
 			for ($x = 3; $x >= 1; --$x) {
 				$jumpToPage = $pageNumber - $x;
@@ -214,7 +214,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		}
 		if ($pageNumber != $numPages) {
 		?>
-		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>">Next >></a>
+		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>"><?php echo(STRING_ALL_NEXT); ?> >></a>
 		<?php
 		}
 		?>
@@ -224,12 +224,12 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		?>
 
 <a name="otherDeaths">
-	<div id="subCategory">Other Deaths</div>
+	<div id="subCategory"><?php echo(STRING_ALL_OTHER_DEATHS); ?></div>
 </a>
 
 	<table>
 		<tr>
-		 <th></th></th><th>Victim</th><th>Reason</th><th>Kill Time</th>
+		 <th></th></th><th><?php echo(STRING_ALL_VICTIM); ?></th><th><?php echo(STRING_ALL_REASON); ?></th><th><?php echo(STRING_ALL_KILLTIME); ?></th>
 		</tr>
 		<?php
 		
@@ -279,7 +279,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		// Allow User to Go To Next Page
 		?>
 		<span id="pageSelector">
-		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< Prev</a> <?php } ?>
+		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< <?php echo(STRING_ALL_PREVIOUS); ?></a> <?php } ?>
 		<?php if ($pageNumber > 1) {
 			for ($x = 3; $x >= 1; --$x) {
 				$jumpToPage = $pageNumber - $x;
@@ -305,7 +305,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 		}
 		if ($pageNumber != $numPages) {
 		?>
-		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>">Next >></a>
+		<a href="./?view=playerKills&uuid=<?php echo($_player->getUUID()); ?>&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>"><?php echo(STRING_ALL_NEXT); ?> >></a>
 		<?php
 		}
 		?>
