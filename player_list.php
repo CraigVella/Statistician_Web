@@ -1,8 +1,8 @@
 <a name="playerList">
-	<div id="subTitle">All Registered Players</div>
+	<div id="subTitle"><?php echo(STRING_SERVER_GLOBAL_ALL_REGISTERED_PLAYERS); ?></div>
 </a>
 <table>
- <th></th><th>Name</th><th>Last Login</th><th>Date Joined</th>
+ <th></th><th><?php echo(STRING_ALL_NAME); ?></th><th><?php echo(STRING_PLAYER_LAST_LOGON); ?></th><th><?php echo(STRING_PLAYER_JOIN_DATE); ?></th>
  <?php
  	$thisTablePNGet = 'playersPN';
 	$thisTablePNAN = 'playerList';
@@ -41,7 +41,7 @@
 		// Allow User to Go To Next Page
 		?>
 		<span id="pageSelector">
-		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< Prev</a> <?php } ?>
+		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< <?php echo(STRING_ALL_PREVIOUS); ?></a> <?php } ?>
 		<?php if ($pageNumber > 1) {
 			for ($x = 3; $x >= 1; --$x) {
 				$jumpToPage = $pageNumber - $x;
@@ -67,7 +67,7 @@
 		}
 		if ($pageNumber != $numPages) {
 		?>
-		<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>">Next >></a>
+		<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>"><?php echo(STRING_ALL_NEXT); ?> >></a>
 		<?php
 		}
 		?>

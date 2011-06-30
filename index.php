@@ -64,5 +64,9 @@ $serverObj = $sObj->getServer();
 		?>
 	</div>
 	<br />
-	<div id="copyright">Statistician by ChaseHQ :: <?php echo(STRING_MISC_RUNNING_DATABASE_VERSION); ?> <?php echo($sObj->getDatabaseVersion()); ?><br /><?php echo(STRING_MISC_PORTAL_VERSION); ?> 1.3</div>
+	<div id="copyright">Statistician by ChaseHQ :: <?php echo(STRING_MISC_RUNNING_DATABASE_VERSION); ?> <?php echo($sObj->getDatabaseVersion()); ?>
+        <br />
+        <?php echo (STRING_MISC_TRANSLATED_TO_BY); ?> <?php if (TRANSLATOR_CONTACT != '') { ?> <a href="<?php echo (TRANSLATOR_CONTACT); ?>"> <?php } echo(TRANSLATOR_NAME); ?><?php if (TRANSLATOR_CONTACT != '') { ?> </a> <?php } ?>
+        <br />
+        <?php echo(STRING_MISC_PORTAL_VERSION); ?> 1.3</div>
 </body>

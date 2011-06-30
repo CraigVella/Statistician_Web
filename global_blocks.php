@@ -1,6 +1,6 @@
-<div id="subTitle">Global Block Statistics</div>
+<div id="subTitle"><?php echo(STRING_SERVER_GLOBAL_BLOCK_STATISTICS); ?></div>
 <table>
-	<th>Block Type</th><th>Destroyed</th><th>Placed</th>
+	<th><?php echo(STRING_ALL_BLOCK_TYPE); ?></th><th><?php echo(STRING_ALL_DESTROYED); ?></th><th><?php echo(STRING_ALL_PLACED); ?></th>
 	<?php
 	$allResource = QueryUtils::getResourceTable();
 	foreach($allResource as $resource) {

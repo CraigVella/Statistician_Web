@@ -1,9 +1,9 @@
 <?php
 $_player = $serverObj->getPlayer($_GET['uuid']);
 ?>
-<div id="subTitle"><?php echo($_player->getName()); ?> Block Statistics</div>
+<div id="subTitle"><?php echo($_player->getName()); ?> <?php echo(STRING_PLAYER_BLOCK_STATISTICS); ?></div>
 <table>
-	<th>Block Type</th><th>Destroyed</th><th>Placed</th>
+	<th><?php echo(STRING_ALL_BLOCK_TYPE); ?></th><th><?php echo(STRING_ALL_DESTROYED); ?></th><th><?php echo(STRING_ALL_PLACED); ?></th>
 	<?php
 	$allResource = QueryUtils::getResourceTable();
 	foreach($allResource as $resource) {
