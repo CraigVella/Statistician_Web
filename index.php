@@ -68,5 +68,5 @@ $serverObj = $sObj->getServer();
         <br />
         <?php echo (STRING_MISC_TRANSLATED_TO_BY); ?> <?php if (TRANSLATOR_CONTACT != '') { ?> <a href="<?php echo (TRANSLATOR_CONTACT); ?>"> <?php } echo(TRANSLATOR_NAME); ?><?php if (TRANSLATOR_CONTACT != '') { ?> </a> <?php } ?>
         <br />
-        <?php echo(STRING_MISC_PORTAL_VERSION); ?> 1.3</div>
+        <?php echo(STRING_MISC_PORTAL_VERSION); ?> 1.3.1</div>
 </body>
