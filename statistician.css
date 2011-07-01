@@ -170,6 +170,19 @@ td {
 	background-color: #95d881;
 }
 
+#skinViewerFloat {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 320px;
+    height: 320px;
+    border:  5px solid black;
+    text-align: center;
+    background-color: #a6dcff;
+    border-collapse: separate;
+    border-style: double;
+}
+
 a:link {
     border-collapse: collapse;
     text-decoration: none;

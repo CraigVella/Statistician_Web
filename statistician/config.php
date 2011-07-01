@@ -12,6 +12,7 @@
 	define ('DATE_FORMAT', 'M jS Y\, \a\t g:i:s a');
     
     define ('USE_MEGAMETERS', true);
+    define ('USE_SKINVIEWER', true);
     
     // Set your localization (language)
     define ('LOCALE', 'en');
