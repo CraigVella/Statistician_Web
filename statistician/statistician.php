@@ -14,9 +14,8 @@
 		private $_ObjServer;
 		
 		function __construct() {
-			$this->secureGlobals();		
-				
-			@$sql_connection = mysql_connect(DB_SERVER,DB_USER,DB_PASSWORD) or die("Statistician Web Interface could not acquire connection to Database");
+			$this->secureGlobals();	
+			@$sql_connection = mysql_connect(DB_SERVER . ':' . DB_PORT,DB_USER,DB_PASSWORD) or die("Statistician Web Interface could not acquire connection to Database");
 			@mysql_select_db(DB_NAME) or die("Statistician Web Interface connected to SQL server but could not select the database");
 
 			$this->_ObjServer = new SERVER();
