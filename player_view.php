@@ -103,7 +103,7 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
     <span id="infoLabel"><?php echo(STRING_ALL_PVP_KILLS); ?>:</span><span id="info"><?php echo($_player->getPlayerKillTablePVP() ? count ($_player->getPlayerKillTablePVP()) : 0); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel">P<?php echo(STRING_PLAYER_PVP_DEATHS); ?>:</span><span id="info"><?php echo($_player->getPlayerDeathTablePVP() ? count ($_player->getPlayerDeathTablePVP()) : 0); ?></span>
+    <span id="infoLabel"><?php echo(STRING_PLAYER_PVP_DEATHS); ?>:</span><span id="info"><?php echo($_player->getPlayerDeathTablePVP() ? count ($_player->getPlayerDeathTablePVP()) : 0); ?></span>
 </div>
 <div id="infoLine">
     <span id="infoLabel"><?php echo(STRING_PLAYER_MOST_KILLED_PLAYER); ?>:</span><span id="info"><?php
