@@ -116,6 +116,7 @@ define ('STRING_PLAYER_PVP_DEATHS','PVP Deaths');
 define ('STRING_PLAYER_PVE_DEATHS','PVE Deaths');
 define ('STRING_PLAYER_MOST_KILLED_PLAYER', 'Most Killed Player');
 define ('STRING_PLAYER_SWORN_ENEMY', 'Sworn Enemy');
+define ('STRING_PLAYER_DEATHS_BY', 'Deaths By');
 define ('STRING_PLAYER_MOST_DANGEROUS_CREATURE', 'Most Dangerous Creature');
 define ('STRING_PLAYER_MOST_KILLED_CREATURE', 'Most Killed Creature');
 
