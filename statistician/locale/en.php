@@ -37,6 +37,7 @@ define ('STRING_ALL_WEAPON','Weapon');
 define ('STRING_ALL_VICTIM','Victim');
 define ('STRING_ALL_KILLTIME','Kill Time');
 define ('STRING_ALL_REASON','Reason');
+define ('STRING_ALL_TIMES','Times');
 
 define ('STRING_ALL_DISTANCES','Distances');
 define ('STRING_ALL_TOTAL_TRAVEL_DISTANCE', 'Total Travel Distance');
