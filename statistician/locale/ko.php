@@ -62,6 +62,7 @@ define ('STRING_ALL_MOST_POPULAR_ITEM_DROPPED','제일 많이 버려진 아이�
 define ('STRING_ALL_KILLS','살인,사망정보');
 define ('STRING_ALL_TOTAL_DEATHS', '총 사망자 수');
 define ('STRING_ALL_PVP_KILLS', '대전으로 죽임');
+define ('STRING_ALL_PVP_DEATHS', '대전으로 사망');
 define ('STRING_ALL_PVE_KILLS', '몹으로 죽임');
 define ('STRING_ALL_OTHER_DEATHS', '기타 사망');
 

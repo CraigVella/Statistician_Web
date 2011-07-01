@@ -69,7 +69,7 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
 </div>
 <div id="infoLine">
     <span id="infoLabel"><?php echo(STRING_ALL_MOST_POPULAR_ITEM_PICKEDUP); ?>:</span><span id="info"><?php echo(QueryUtils::getResourceNameById($serverObj->getMostPickedUp())); ?>
-     - (<?php echo($serverObj->getPickedUpOfTypeTotal($serverObj->getMostPickedUp())); ?> <?php echo(STRING_ALL_ITEMS); ?>)</span>
+     - (<?php echo($serverObj->getPickedUpOfTypeTotal($serverObj->getMostPickedUp())); ?> <?php echo(STRING_ALL_TIMES); ?>)</span>
 </div>
 <div id="infoLine">
     <span id="infoLabel"><?php echo(STRING_ALL_TOTAL_ITEMS_DROPPED); ?>:</span><span id="info"><?php echo($serverObj->getDroppedTotal()); ?> <?php echo(STRING_ALL_ITEMS); ?></span>
@@ -96,7 +96,7 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
     $player = $serverObj->getMostKillerPVP();
     if ($player) {
     	?>
-    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerKillTableCreature(QueryUtils::getCreatureIdByName("Player")))); ?> pvp kills)
+    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerKillTableCreature(QueryUtils::getCreatureIdByName("Player")))); ?> <?php echo(STRING_ALL_PVP_KILLS); ?>)
     	<?php
     } else {
     	?>
@@ -110,7 +110,7 @@ $playerOnlineArray = $serverObj->getAllPlayersOnline();
     $player = $serverObj->getMostKilledPVP();
     if ($player) {
     	?>
-    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerDeathTableCreature(QueryUtils::getCreatureIdByName("Player")))); ?> pvp deaths)
+    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerDeathTableCreature(QueryUtils::getCreatureIdByName("Player")))); ?> <?php echo(STRING_ALL_PVP_DEATHS); ?>)
     	<?php
     } else {
     	?>

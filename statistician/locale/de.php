@@ -62,6 +62,7 @@ define ('STRING_ALL_MOST_POPULAR_ITEM_DROPPED','Meist weggeworfener Gegenstand')
 define ('STRING_ALL_KILLS','Tode');
 define ('STRING_ALL_TOTAL_DEATHS', 'Gesamt gestorben');
 define ('STRING_ALL_PVP_KILLS', 'PVP Getötet');
+define ('STRING_ALL_PVP_DEATHS', 'PVP Tode');
 define ('STRING_ALL_PVE_KILLS', 'PVE Getötet');
 define ('STRING_ALL_OTHER_DEATHS', 'Sonstige Tode');
 
