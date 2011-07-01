@@ -103,7 +103,7 @@ define ('STRING_SERVER_MOST_DANGEROUS_CREATURE', 'Most Dangerous Creature');
 define ('STRING_SERVER_MOST_KILLED_CREATURE', 'Most Killed Creature');
 
 // Unique to Player Page
-define ('STRING_PLAYER_STATISTICS','Statistic\'s');
+define ('STRING_PLAYER_STATISTICS','Statistics');
 define ('STRING_PLAYER_JOIN_DATE','Date Joined');
 define ('STRING_PLAYER_LAST_LOGON','Last Logon');
 define ('STRING_PLAYER_LIFETIME_LOGONS','Lifetime Number Of Logons');
