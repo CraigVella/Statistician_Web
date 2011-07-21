@@ -7,6 +7,7 @@
 	require_once('_serverObj.php');
 	require_once('_playerObj.php');
 	require_once('query_utils.php');
+	define('PORTAL_VERSION','1.3.2');
 
 	class STATISTICIAN {
 	
